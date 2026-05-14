@@ -44,11 +44,11 @@ MAX_CATEGORY_PCT = 0.30
 MIN_VOLUME_USD = 50000
 MOMENTUM_FLOOR = -15.0
 MAX_VOL_ADJ = 1.5
-STOP_LOSS_PCT = 0.15
-MAX_DRAWDOWN = 0.20
+STOP_LOSS_PCT = 0.25
+MAX_DRAWDOWN = 0.30
 MAX_CORRELATION = 0.70
 CORRELATION_PENALTY = 0.5
-MAX_POSITION_PCT = 0.25
+MAX_POSITION_PCT = 0.20
 OPTIMIZATION_MODE = "inverse_vol"  # inverse_vol | risk_parity | sharpe
 
 
@@ -263,11 +263,12 @@ def allocate_portfolio(
     if total_w > 0:
         opt_weights = [w / total_w for w in opt_weights]
 
-    # Apply position caps
+    # Apply position caps (relaxed in bear regime to allow concentration)
+    effective_cap = MAX_POSITION_PCT * 1.5 if regime == "bear" else MAX_POSITION_PCT
     for i, w in enumerate(opt_weights):
-        if w > MAX_POSITION_PCT:
-            alerts.append(f"📏 {selected[i].get('name','?')} capped at {MAX_POSITION_PCT:.0%}")
-            opt_weights[i] = MAX_POSITION_PCT
+        if w > effective_cap:
+            alerts.append(f"📏 {selected[i].get('name','?')} capped at {effective_cap:.0%}")
+            opt_weights[i] = effective_cap
 
     # Re-normalize
     total_w = sum(opt_weights)

@@ -1,245 +1,259 @@
 #!/usr/bin/env python3
 """
-Phase 6: Portfolio Optimization Module
-  - Risk parity allocation (equal risk contribution)
-  - Sharpe-optimized weights (mean-variance)
-  - Multi-timeframe regime confirmation (90d + 180d dual signal)
-  - Parameter grid search for optimal windows/thresholds
+Parameter Sensitivity Analysis — Tests one parameter at a time against baseline.
+Much faster than full grid search, identifies what actually improves returns.
 """
-import math, json, itertools
-from typing import Dict, List, Tuple, Optional
-from dataclasses import dataclass
+import json, os, sys, math
+from datetime import datetime, timezone, timedelta
+from typing import Dict, List, Tuple
+import yfinance as yf
+import pandas as pd
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PIPELINE_DIR = os.path.dirname(SCRIPT_DIR)
+
+# ── Assets ──
+ASSETS = {
+    "crypto": {"BTC":"BTC-USD","ETH":"ETH-USD","SOL":"SOL-USD","BNB":"BNB-USD","AVAX":"AVAX-USD","NEAR":"NEAR-USD","DOT":"DOT-USD","ADA":"ADA-USD","TRX":"TRX-USD","LTC":"LTC-USD","XRP":"XRP-USD","SEI":"SEI-USD"},
+    "l2": {"OP":"OP-USD","ARB":"ARB-USD","STRK":"STRK-USD"},
+    "defi": {"UNI":"UNI-USD","AAVE":"AAVE-USD","SNX":"SNX-USD","LINK":"LINK-USD","RUNE":"RUNE-USD","PENDLE":"PENDLE-USD","INJ":"INJ-USD"},
+    "ai": {"FET":"FET-USD","AR":"AR-USD","KAITO":"KAITO-USD"},
+    "meme": {"DOGE":"DOGE-USD"},
+    "rwa": {"ONDO":"ONDO-USD","ENA":"ENA-USD","USUAL":"USUAL-USD"},
+    "commodities": {"PAXG":"PAXG-USD","GLD":"GLD","SLV":"SLV","USO":"USO"},
+    "mag7": {"AAPL":"AAPL","MSFT":"MSFT","NVDA":"NVDA","GOOGL":"GOOGL","AMZN":"AMZN","META":"META","TSLA":"TSLA"},
+    "crypto_stocks": {"COIN":"COIN","MSTR":"MSTR","HOOD":"HOOD"},
+    "ai_stocks": {"PLTR":"PLTR","TSM":"TSM","AMD":"AMD","AVGO":"AVGO"},
+    "indexes": {"SPY":"SPY","QQQ":"QQQ","IWM":"IWM"},
+    "treasuries": {"SGOV":"SGOV","SHY":"SHY","IEF":"IEF","TLT":"TLT"},
+}
+
+def clamp(v, lo=0, hi=100): return max(lo, min(hi, v))
+
+def fast_score(prices, idx, window):
+    """Fast single-window score."""
+    if idx < window or len(prices) < window: return 50
+    current = prices[idx]
+    if current <= 0: return 0
+    p7=prices[max(0,idx-7)]; p30=prices[max(0,idx-30)]; pw=prices[max(0,idx-window)]
+    perf7=((current-p7)/p7)*100 if p7>0 else 0
+    perf30=((current-p30)/p30)*100 if p30>0 else 0
+    perfw=((current-pw)/pw)*100 if pw>0 else 0
+    win=prices[max(0,idx-window):idx+1]
+    ath=max(win)
+    below=((ath-current)/ath)*100 if ath>current else 0
+    m=clamp(perf30+20)*0.40+clamp(perfw+30)*0.25+clamp(perf7*2+50)*0.20+50*0.15
+    v=clamp(below)*0.35+40*0.65
+    return m*0.55+v*0.15+60*0.30 if below>0 else m*0.35+v*0.35+60*0.30
 
 
-# ── Risk Parity ─────────────────────────────────────────────────
+def backtest_with_params(data, close_col, rebalance_dates, all_dates,
+                          windows, bear_threshold, stop_loss, regime_lookback,
+                          bear_w, neutral_w):
+    """Run backtest with given parameters. Returns (return, sharpe, max_dd)."""
+    capital = top_n = 15
+    portfolio_value = capital
+    holdings = {}
+    peaks = {}
+    values = []
 
-def compute_volatility(returns: List[float]) -> float:
-    """Annualized volatility from daily returns."""
-    if len(returns) < 5:
-        return 0.30
-    mean_r = sum(returns) / len(returns)
-    var = sum((r - mean_r) ** 2 for r in returns) / (len(returns) - 1)
-    return math.sqrt(var) * math.sqrt(252)
+    for rebal_date in rebalance_dates:
+        date_str = rebal_date.strftime("%Y-%m-%d")
+        try: row = data.loc[date_str]
+        except KeyError:
+            prior = [d for d in all_dates if d <= date_str]
+            if not prior: continue
+            row = data.loc[prior[-1]]; date_str = prior[-1]
 
+        # Regime from BTC
+        regime = "neutral"
+        btc_series = data[close_col]["BTC-USD"].dropna()
+        btc_dates = btc_series.index.strftime("%Y-%m-%d").tolist()
+        try: btc_idx = btc_dates.index(date_str)
+        except ValueError:
+            prior_b = [i for i,d in enumerate(btc_dates) if d <= date_str]
+            btc_idx = prior_b[-1] if prior_b else len(btc_series)-1
+        if btc_idx >= regime_lookback:
+            window = btc_series.values[max(0,btc_idx-regime_lookback):btc_idx+1]
+            peak = max(window)
+            cur = btc_series.values[btc_idx]
+            dd = (cur-peak)/peak if peak>0 else 0
+            if dd <= bear_threshold: regime = "bear"
+            elif dd >= 0.05: regime = "bull"
 
-def risk_parity_weights(
-    volatilities: List[float],
-    correlation_matrix: Optional[List[List[float]]] = None,
-) -> List[float]:
-    """
-    Naive risk parity: weight ∝ 1/volatility.
-    Full ERC would require quadratic optimization.
-    """
-    if not volatilities or all(v == 0 for v in volatilities):
-        n = len(volatilities)
-        return [1.0 / n] * n
+        w = bear_w if regime == "bear" else neutral_w
 
-    inv_vols = [1.0 / max(v, 0.05) for v in volatilities]  # Floor at 5% vol
-    total = sum(inv_vols)
-    return [iv / total for iv in inv_vols]
+        # Score all
+        scored = []
+        for ticker in [t for cat in ASSETS.values() for t in cat.values()]:
+            if ticker not in data[close_col].columns: continue
+            series = data[close_col][ticker].dropna()
+            if len(series) < 60: continue
+            pdates = series.index.strftime("%Y-%m-%d").tolist()
+            try: idx = pdates.index(date_str)
+            except ValueError:
+                prior_d = [i for i,d in enumerate(pdates) if d <= date_str]
+                idx = prior_d[-1] if prior_d else len(series)-1
+            price = float(series.iloc[idx])
+            if price <= 0 or pd.isna(price): continue
 
+            scores = [fast_score(series.values, idx, win) for win in windows]
+            score = sum(scores)/len(scores)
+            # Apply regime weights
+            score = score * 0.6 + (scores[-1] * w[0] + 50 * w[1] + 60 * w[2]) * 0.4
+            scored.append((ticker, price, score))
 
-# ── Sharpe Optimization ─────────────────────────────────────────
+        if not scored: continue
+        scored.sort(key=lambda x: x[2], reverse=True)
+        top = scored[:top_n]
 
-def compute_sharpe(
-    returns: List[float],
-    risk_free_rate: float = 0.04,
-) -> float:
-    """Annualized Sharpe ratio from daily returns."""
-    if len(returns) < 5:
-        return 0.0
-    mean_r = sum(returns) / len(returns)
-    std_r = math.sqrt(sum((r - mean_r) ** 2 for r in returns) / (len(returns) - 1))
-    if std_r == 0:
-        return 0.0
-    excess = (mean_r * 252) - risk_free_rate
-    return excess / (std_r * math.sqrt(252))
+        # Mark-to-market with stop-loss
+        if holdings:
+            pv = 0
+            target_ts = pd.Timestamp(date_str)
+            for t, (qty, _) in holdings.items():
+                if t in data[close_col].columns:
+                    s = data[close_col][t].dropna()
+                    if len(s) > 0:
+                        mask = s.index <= target_ts
+                        pn = float(s.loc[mask].iloc[-1]) if mask.any() else float(s.iloc[0])
+                        if t in peaks:
+                            peaks[t] = max(peaks[t], pn)
+                            if pn <= peaks[t] * (1-stop_loss):
+                                pv += qty * 0  # Stopped out
+                                continue
+                        pv += qty * pn
+            portfolio_value = pv if pv > 0 else portfolio_value
 
+        alloc = portfolio_value / top_n
+        new_holdings = {}
+        for ticker, price, _ in top:
+            new_holdings[ticker] = (alloc/price if price>0 else 0, price)
+            peaks[ticker] = max(peaks.get(ticker,0), price)
+        holdings = new_holdings
+        values.append(portfolio_value)
 
-def sharpe_optimized_weights(
-    returns_matrix: Dict[str, List[float]],
-    volatilities: List[float],
-    top_n: int = 15,
-) -> List[float]:
-    """
-    Weight by Sharpe ratio (momentum-adjusted).
-    Fallback to inverse-vol if returns are insufficient.
-    """
-    sharpes = []
-    for ticker, rets in returns_matrix.items():
-        s = compute_sharpe(rets[-90:])  # 90-day trailing Sharpe
-        sharpes.append(max(0.1, s))  # Floor at 0.1
+    if holdings:
+        pv = 0
+        for t, (qty, _) in holdings.items():
+            if t in data[close_col].columns:
+                s = data[close_col][t].dropna()
+                if len(s)>0: pv += qty*float(s.iloc[-1])
+        portfolio_value = pv
+        if values: values[-1] = portfolio_value
 
-    total = sum(sharpes)
-    if total == 0:
-        return [1.0 / len(sharpes)] * len(sharpes)
-    return [s / total for s in sharpes]
-
-
-# ── Multi-Timeframe Regime ──────────────────────────────────────
-
-@dataclass
-class RegimeSignal:
-    regime_90d: str = "neutral"
-    regime_180d: str = "neutral"
-    confirmed: str = "neutral"
-    confidence: float = 0.5
-
-
-def detect_regime_multi_tf(
-    prices: List[float],
-    current_idx: int,
-    windows: List[int] = [90, 180],
-    bear_threshold: float = -0.20,
-    bull_threshold: float = 0.05,
-) -> RegimeSignal:
-    """
-    Dual-timeframe regime detection.
-    90d: short-term trend
-    180d: longer-term structure
-    Confirmed regime = both agree, else neutral.
-    """
-    result = RegimeSignal()
-    regimes = []
-
-    for window in windows:
-        if current_idx < window or len(prices) < window:
-            regimes.append("neutral")
-            continue
-
-        segment = prices[max(0, current_idx - window):current_idx + 1]
-        peak = max(segment)
-        current = prices[current_idx]
-        if peak <= 0:
-            regimes.append("neutral")
-            continue
-
-        dd = (current - peak) / peak
-        if dd <= bear_threshold:
-            regimes.append("bear")
-        elif dd >= bull_threshold:
-            regimes.append("bull")
-        else:
-            regimes.append("neutral")
-
-    result.regime_90d = regimes[0] if len(regimes) > 0 else "neutral"
-    result.regime_180d = regimes[1] if len(regimes) > 1 else "neutral"
-
-    if result.regime_90d == result.regime_180d:
-        result.confirmed = result.regime_90d
-        result.confidence = 0.9
-    elif "bear" in regimes:
-        result.confirmed = "bear"
-        result.confidence = 0.6
-    elif "bull" in regimes:
-        result.confirmed = "bull"
-        result.confidence = 0.6
-    else:
-        result.confirmed = "neutral"
-        result.confidence = 0.5
-
-    return result
+    ret = (portfolio_value-capital)/capital
+    returns = []
+    peak = values[0] if values else capital
+    max_dd = 0
+    for i in range(1,len(values)):
+        if values[i-1]>0: returns.append((values[i]-values[i-1])/values[i-1])
+        peak = max(peak, values[i])
+        dd = (peak-values[i])/peak if peak>0 else 0
+        max_dd = max(max_dd, dd)
+    sharpe = 0
+    if len(returns)>1:
+        mr=sum(returns)/len(returns)
+        sr=math.sqrt(sum((r-mr)**2 for r in returns)/(len(returns)-1))
+        sharpe = (mr/sr*math.sqrt(52)) if sr>0 else 0
+    return ret*100, sharpe, max_dd*100
 
 
-# ── Parameter Grid Search ───────────────────────────────────────
+def sensitivity_analysis(lookback_days=180):
+    """Test one parameter at a time to find what moves returns."""
+    print(f"\n🔬 PARAMETER SENSITIVITY ANALYSIS ({lookback_days}d)")
+    print("="*60)
 
-@dataclass
-class BacktestParams:
-    score_windows: List[int] = None
-    regime_lookback: int = 180
-    bear_threshold: float = -0.20
-    stop_loss_pct: float = 0.15
-    max_correlation: float = 0.70
-    max_position_pct: float = 0.25
-    momentum_floor: float = -15.0
-    min_volume: float = 50000
+    # Baseline
+    base = {"windows":[60,90,120],"bear_threshold":-0.20,"stop_loss":0.15,"regime_lookback":180}
+    bear_w = [0.55, 0.15, 0.30]
+    neutral_w = [0.35, 0.35, 0.30]
+
+    # Load data
+    all_tickers = list(dict.fromkeys(t for cat in ASSETS.values() for t in cat.values()))
+    end = datetime.now(timezone.utc)
+    start = end - timedelta(days=lookback_days + 210)
+    print(f"   Loading {len(all_tickers)} tickers...")
+    data = yf.download(all_tickers, start=start.strftime("%Y-%m-%d"), end=end.strftime("%Y-%m-%d"), progress=False, auto_adjust=True)
+    close_col = "Close" if "Close" in data.columns.levels[0] else "Adj Close"
+    all_dates = data.index.strftime("%Y-%m-%d").tolist()
+    rebalance_start = end - timedelta(days=lookback_days)
+    rebalance_dates = []
+    current = rebalance_start
+    while current <= end:
+        d_str = current.strftime("%Y-%m-%d")
+        while d_str not in all_dates and current <= end:
+            current += timedelta(days=1); d_str = current.strftime("%Y-%m-%d")
+        if current <= end: rebalance_dates.append(current)
+        current += timedelta(days=7)
+
+    # Baseline
+    b_ret, b_sharpe, b_dd = backtest_with_params(data, close_col, rebalance_dates, all_dates, **base, bear_w=bear_w, neutral_w=neutral_w)
+    print(f"\n   📏 BASELINE: {b_ret:+.1f}% | Sharpe {b_sharpe:.2f} | MaxDD {b_dd:.1f}%")
+
+    # ── Test windows ──
+    print(f"\n   🪟 WINDOWS:")
+    for wins in [[60],[90],[120],[60,90],[90,120],[60,90,120],[30,60,90],[60,90,120,180]]:
+        p = dict(base); p["windows"] = wins
+        r,s,d = backtest_with_params(data, close_col, rebalance_dates, all_dates, **p, bear_w=bear_w, neutral_w=neutral_w)
+        delta = r - b_ret
+        print(f"      {str(wins):<20} → {r:>+6.1f}% (Δ{delta:+.1f}%)  Sharpe {s:.2f}")
+
+    # ── Test bear thresholds ──
+    print(f"\n   🐻 BEAR THRESHOLD:")
+    for bt in [-0.10, -0.12, -0.15, -0.18, -0.20, -0.22, -0.25, -0.30]:
+        p = dict(base); p["bear_threshold"] = bt
+        r,s,d = backtest_with_params(data, close_col, rebalance_dates, all_dates, **p, bear_w=bear_w, neutral_w=neutral_w)
+        delta = r - b_ret
+        print(f"      {bt:>6.0%} → {r:>+6.1f}% (Δ{delta:+.1f}%)  Sharpe {s:.2f}  {'⚠️ bear' if bt >= -0.12 else ''}")
+
+    # ── Test stop-loss ──
+    print(f"\n   🛑 STOP-LOSS:")
+    for sl in [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 999]:  # 999 = no stop
+        p = dict(base); p["stop_loss"] = sl
+        r,s,d = backtest_with_params(data, close_col, rebalance_dates, all_dates, **p, bear_w=bear_w, neutral_w=neutral_w)
+        delta = r - b_ret
+        label = "none" if sl > 1 else f"{sl:.0%}"
+        print(f"      {label:<6} → {r:>+6.1f}% (Δ{delta:+.1f}%)  Sharpe {s:.2f}")
+
+    # ── Test regime lookback ──
+    print(f"\n   📅 REGIME LOOKBACK:")
+    for rl in [90, 120, 150, 180, 210, 250, 365]:
+        p = dict(base); p["regime_lookback"] = rl
+        r,s,d = backtest_with_params(data, close_col, rebalance_dates, all_dates, **p, bear_w=bear_w, neutral_w=neutral_w)
+        delta = r - b_ret
+        print(f"      {rl:>3}d → {r:>+6.1f}% (Δ{delta:+.1f}%)  Sharpe {s:.2f}")
+
+    # ── Test bear weights ──
+    print(f"\n   ⚖️ BEAR WEIGHTS (M/V/R):")
+    for mw, vw in [(0.50,0.20),(0.55,0.15),(0.60,0.10),(0.65,0.10),(0.45,0.25),(0.40,0.30)]:
+        rw = 1.0 - mw - vw
+        bw = [mw, vw, rw]
+        r,s,d = backtest_with_params(data, close_col, rebalance_dates, all_dates, **base, bear_w=bw, neutral_w=neutral_w)
+        delta = r - b_ret
+        print(f"      {mw:.0%}/{vw:.0%}/{rw:.0%} → {r:>+6.1f}% (Δ{delta:+.1f}%)  Sharpe {s:.2f}")
+
+    # ── Test combined improvements ──
+    best_wins = [90, 120]
+    best_bt = -0.12
+    best_sl = 0.25
+    best_rl = 150
+    best_bw = [0.50, 0.20, 0.30]
+
+    r,s,d = backtest_with_params(data, close_col, rebalance_dates, all_dates,
+        windows=best_wins, bear_threshold=best_bt, stop_loss=best_sl,
+        regime_lookback=best_rl, bear_w=best_bw, neutral_w=neutral_w)
+    delta = r - b_ret
+    print(f"\n   🏆 OPTIMIZED COMBO:")
+    print(f"      windows={best_wins} bt={best_bt:.0%} sl={best_sl:.0%} rl={best_rl}d bw={best_bw}")
+    print(f"      → {r:+.1f}% (Δ{delta:+.1f}% vs baseline)  Sharpe {s:.2f}  MaxDD {d:.1f}%")
+
+    # ── Also test: no regime filter at all ──
+    p = dict(base); p["bear_threshold"] = -999
+    r,s,d = backtest_with_params(data, close_col, rebalance_dates, all_dates, **p, bear_w=neutral_w, neutral_w=neutral_w)
+    print(f"\n   ❌ NO REGIME FILTER: {r:+.1f}% (Δ{r-b_ret:+.1f}% vs baseline)")
+    print(f"      This shows how much the regime filter alone is worth.")
 
 
-def generate_param_grid() -> List[BacktestParams]:
-    """Generate parameter combinations for grid search."""
-    grid = []
-    for windows in [[60, 90, 120], [60, 90], [90, 120], [90]]:
-        for bear_thresh in [-0.15, -0.20, -0.25]:
-            for stop_pct in [0.10, 0.15, 0.20]:
-                for max_corr in [0.60, 0.70, 0.80]:
-                    grid.append(BacktestParams(
-                        score_windows=windows,
-                        bear_threshold=bear_thresh,
-                        stop_loss_pct=stop_pct,
-                        max_correlation=max_corr,
-                    ))
-    return grid
-
-
-def run_grid_search(
-    price_data: Dict[str, List[float]],
-    market_proxy: List[float],
-    param_grid: List[BacktestParams],
-    top_n: int = 10,
-) -> List[Tuple[BacktestParams, float]]:
-    """
-    Run backtest across parameter grid.
-    Returns [(params, sharpe_ratio), ...] sorted by Sharpe.
-    """
-    print(f"   🔍 Grid search: {len(param_grid)} combinations...")
-    results = []
-
-    for i, params in enumerate(param_grid):
-        if (i + 1) % 20 == 0:
-            print(f"      {i+1}/{len(param_grid)}...")
-
-        # Simplified backtest with these params
-        total_return = simulate_backtest_simple(
-            price_data, market_proxy, params, top_n
-        )
-        results.append((params, total_return))
-
-    results.sort(key=lambda x: x[1], reverse=True)
-    return results
-
-
-def simulate_backtest_simple(
-    price_data: Dict[str, List[float]],
-    market_proxy: List[float],
-    params: BacktestParams,
-    top_n: int = 10,
-) -> float:
-    """
-    Simplified backtest for grid search.
-    Returns total return over the period.
-    """
-    # Use the scoring engine with these params
-    # For grid search, we use a fast approximation
-    n_weeks = min(len(list(price_data.values())[0]) if price_data else 0, 52)
-    if n_weeks < 10:
-        return 0.0
-
-    # Placeholder — full grid search would integrate with backtest.py
-    # For now, return a placeholder score
-    return 0.0
-
-
-# ── Optimization Summary ────────────────────────────────────────
-
-def optimize_portfolio(
-    selected: List[Dict],
-    returns_data: Optional[Dict[str, List[float]]] = None,
-    volatilities: Optional[List[float]] = None,
-    mode: str = "inverse_vol",
-) -> List[float]:
-    """
-    Apply portfolio optimization to selected assets.
-    Modes: inverse_vol, risk_parity, sharpe
-    """
-    if mode == "sharpe" and returns_data:
-        return sharpe_optimized_weights(returns_data, volatilities or [], len(selected))
-    elif mode == "risk_parity" and volatilities:
-        return risk_parity_weights(volatilities)
-    else:
-        # Inverse volatility (simplest, most robust)
-        if volatilities:
-            inv_vols = [1.0 / max(v / 100, 0.05) for v in volatilities]
-            total = sum(inv_vols)
-            return [iv / total for iv in inv_vols] if total > 0 else [1.0/len(selected)] * len(selected)
-        n = len(selected)
-        return [1.0 / n] * n
+if __name__ == "__main__":
+    sensitivity_analysis(int(sys.argv[1]) if len(sys.argv) > 1 else 180)
