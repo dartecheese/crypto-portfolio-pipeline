@@ -1,0 +1,295 @@
+{
+  "portfolio_name": "Crypto Portfolio v3 \u2014 2026-05-14",
+  "strategy": "regime-aware",
+  "total_capital": 25000.0,
+  "num_assets": 15,
+  "category_counts": {
+    "rwa": 2,
+    "l1": 4,
+    "l2": 3,
+    "meme": 1,
+    "defi": 3,
+    "ai": 1,
+    "data": 1
+  },
+  "timestamp": "2026-05-14T11:42:16.708570+00:00",
+  "allocations": [
+    {
+      "rank": 1,
+      "ticker": "BINANCE:ONDOUSDT",
+      "name": "ONDO \u2014 Ondo",
+      "price": 0.382,
+      "composite_score": 67.7,
+      "momentum_score": 72.0,
+      "value_score": 60.1,
+      "risk_score": 63.6,
+      "pct_below_ath": 67.4,
+      "allocation_pct": 11.1,
+      "allocation_usd": 2764.77,
+      "category": "rwa",
+      "signals": [
+        "\ud83d\udcc9 Significant ATH discount (>60%)",
+        "\u2696\ufe0f RSI neutral",
+        "\ud83d\ude80 Strong 1M (+48%)"
+      ]
+    },
+    {
+      "rank": 2,
+      "ticker": "BINANCE:SUIUSD",
+      "name": "SUIUSD",
+      "price": 1.201,
+      "composite_score": 60.7,
+      "momentum_score": 58.5,
+      "value_score": 63.2,
+      "risk_score": 63.6,
+      "pct_below_ath": 77.6,
+      "allocation_pct": 11.6,
+      "allocation_usd": 2889.69,
+      "category": "l1",
+      "signals": [
+        "\ud83d\udcc9 Significant ATH discount (>60%)",
+        "\u2696\ufe0f RSI neutral",
+        "\ud83d\ude80 Strong 1M (+25%)"
+      ]
+    },
+    {
+      "rank": 3,
+      "ticker": "COINBASE:STRKUSD",
+      "name": "STRKUSD",
+      "price": 0.047,
+      "composite_score": 59.5,
+      "momentum_score": 52.6,
+      "value_score": 78.9,
+      "risk_score": 62.4,
+      "pct_below_ath": 98.3,
+      "allocation_pct": 4.7,
+      "allocation_usd": 1182.82,
+      "category": "l2",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral",
+        "\ud83d\ude80 Strong 1M (+39%)"
+      ]
+    },
+    {
+      "rank": 4,
+      "ticker": "COINBASE:DOGEUSD",
+      "name": "DOGEUSD",
+      "price": 0.11343,
+      "composite_score": 56.1,
+      "momentum_score": 47.4,
+      "value_score": 65.6,
+      "risk_score": 67.3,
+      "pct_below_ath": 76.7,
+      "allocation_pct": 10.9,
+      "allocation_usd": 2726.02,
+      "category": "meme",
+      "signals": [
+        "\ud83d\udcc9 Significant ATH discount (>60%)",
+        "\u2696\ufe0f RSI neutral",
+        "\ud83d\ude80 Strong 1M (+20%)"
+      ]
+    },
+    {
+      "rank": 5,
+      "ticker": "COINBASE:ARBUSD",
+      "name": "ARBUSD",
+      "price": 0.1306,
+      "composite_score": 55.0,
+      "momentum_score": 43.0,
+      "value_score": 75.9,
+      "risk_score": 66.4,
+      "pct_below_ath": 94.6,
+      "allocation_pct": 6.3,
+      "allocation_usd": 1585.96,
+      "category": "l2",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral"
+      ]
+    },
+    {
+      "rank": 6,
+      "ticker": "COINBASE:UNIUSD",
+      "name": "UNIUSD",
+      "price": 3.612,
+      "composite_score": 55.0,
+      "momentum_score": 41.6,
+      "value_score": 74.3,
+      "risk_score": 69.7,
+      "pct_below_ath": 92.0,
+      "allocation_pct": 7.6,
+      "allocation_usd": 1890.15,
+      "category": "defi",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral"
+      ]
+    },
+    {
+      "rank": 7,
+      "ticker": "COINBASE:LINKUSD",
+      "name": "LINKUSD",
+      "price": 10.278,
+      "composite_score": 54.4,
+      "momentum_score": 43.9,
+      "value_score": 66.9,
+      "risk_score": 67.5,
+      "pct_below_ath": 80.6,
+      "allocation_pct": 9.0,
+      "allocation_usd": 2249.92,
+      "category": "defi",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral"
+      ]
+    },
+    {
+      "rank": 8,
+      "ticker": "BINANCE:MORPHOUSDT",
+      "name": "MORPHO \u2014 Morpho",
+      "price": 1.951,
+      "composite_score": 54.0,
+      "momentum_score": 47.3,
+      "value_score": 19.4,
+      "risk_score": 83.7,
+      "pct_below_ath": 17.5,
+      "allocation_pct": 5.1,
+      "allocation_usd": 1269.24,
+      "category": "rwa",
+      "signals": [
+        "\u2696\ufe0f RSI neutral",
+        "\ud83d\udee1\ufe0f Low risk"
+      ]
+    },
+    {
+      "rank": 9,
+      "ticker": "BINANCE:KAITOUSDT",
+      "name": "KAITOUSDT",
+      "price": 0.4586,
+      "composite_score": 54.0,
+      "momentum_score": 42.8,
+      "value_score": 71.4,
+      "risk_score": 65.7,
+      "pct_below_ath": 84.3,
+      "allocation_pct": 4.5,
+      "allocation_usd": 1125.65,
+      "category": "ai",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral"
+      ]
+    },
+    {
+      "rank": 10,
+      "ticker": "BINANCE:SEIUSD",
+      "name": "SEIUSD",
+      "price": 0.0662,
+      "composite_score": 53.4,
+      "momentum_score": 40.0,
+      "value_score": 78.1,
+      "risk_score": 65.8,
+      "pct_below_ath": 94.2,
+      "allocation_pct": 5.1,
+      "allocation_usd": 1272.25,
+      "category": "l1",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral",
+        "\ud83d\ude80 Strong 1M (+17%)"
+      ]
+    },
+    {
+      "rank": 11,
+      "ticker": "COINBASE:SNXUSD",
+      "name": "SNXUSD",
+      "price": 0.327,
+      "composite_score": 53.4,
+      "momentum_score": 39.7,
+      "value_score": 81.3,
+      "risk_score": 64.5,
+      "pct_below_ath": 98.9,
+      "allocation_pct": 4.8,
+      "allocation_usd": 1202.68,
+      "category": "defi",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral"
+      ]
+    },
+    {
+      "rank": 12,
+      "ticker": "COINBASE:OPUSD",
+      "name": "OPUSD",
+      "price": 0.146,
+      "composite_score": 53.3,
+      "momentum_score": 40.2,
+      "value_score": 78.4,
+      "risk_score": 64.8,
+      "pct_below_ath": 97.0,
+      "allocation_pct": 3.7,
+      "allocation_usd": 927.84,
+      "category": "l2",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral",
+        "\ud83d\ude80 Strong 1M (+27%)"
+      ]
+    },
+    {
+      "rank": 13,
+      "ticker": "COINBASE:SOLUSD",
+      "name": "SOLUSD",
+      "price": 91.14,
+      "composite_score": 53.3,
+      "momentum_score": 40.1,
+      "value_score": 63.8,
+      "risk_score": 72.4,
+      "pct_below_ath": 69.1,
+      "allocation_pct": 7.1,
+      "allocation_usd": 1777.99,
+      "category": "l1",
+      "signals": [
+        "\ud83d\udcc9 Significant ATH discount (>60%)",
+        "\u2696\ufe0f RSI neutral",
+        "\ud83d\udee1\ufe0f Low risk"
+      ]
+    },
+    {
+      "rank": 14,
+      "ticker": "COINBASE:DOTUSD",
+      "name": "DOTUSD",
+      "price": 1.331,
+      "composite_score": 53.1,
+      "momentum_score": 37.8,
+      "value_score": 77.8,
+      "risk_score": 68.9,
+      "pct_below_ath": 97.6,
+      "allocation_pct": 5.2,
+      "allocation_usd": 1291.19,
+      "category": "l1",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral"
+      ]
+    },
+    {
+      "rank": 15,
+      "ticker": "COINBASE:PYTHUSD",
+      "name": "PYTHUSD",
+      "price": 0.0506,
+      "composite_score": 52.4,
+      "momentum_score": 39.6,
+      "value_score": 72.3,
+      "risk_score": 65.9,
+      "pct_below_ath": 81.1,
+      "allocation_pct": 3.4,
+      "allocation_usd": 843.84,
+      "category": "data",
+      "signals": [
+        "\ud83d\udd25 Deep ATH drawdown (>80%)",
+        "\u2696\ufe0f RSI neutral"
+      ]
+    }
+  ]
+}

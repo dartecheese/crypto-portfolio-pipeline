@@ -1,0 +1,593 @@
+{
+  "start_date": "2025-05-14",
+  "end_date": "2026-05-14",
+  "initial_capital": 10000,
+  "final_value": 13029.19,
+  "total_return_pct": 30.29,
+  "rebalance_count": 53,
+  "history": [
+    {
+      "date": "2025-05-14",
+      "value": 10000,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "RUNE($1.95)",
+        "ARB($0.00)",
+        "FET($0.83)"
+      ]
+    },
+    {
+      "date": "2025-05-21",
+      "value": 9683.3,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "HOOD($63.86)",
+        "COIN($258.99)",
+        "PLTR($120.58)"
+      ]
+    },
+    {
+      "date": "2025-05-28",
+      "value": 9774.31,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "URA($31.40)",
+        "SGOV($96.82)",
+        "KAITO($2.17)"
+      ]
+    },
+    {
+      "date": "2025-06-04",
+      "value": 9687.96,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "HOOD($72.27)",
+        "AVGO($258.98)",
+        "KAITO($1.66)"
+      ]
+    },
+    {
+      "date": "2025-06-11",
+      "value": 9854.37,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "HOOD($74.88)",
+        "URA($34.24)",
+        "TSM($211.48)"
+      ]
+    },
+    {
+      "date": "2025-06-18",
+      "value": 9847.35,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "HOOD($78.35)",
+        "ARB($0.00)",
+        "URA($36.05)"
+      ]
+    },
+    {
+      "date": "2025-06-25",
+      "value": 10083.98,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "COIN($355.37)",
+        "ARB($0.00)",
+        "HOOD($82.75)"
+      ]
+    },
+    {
+      "date": "2025-07-02",
+      "value": 10266.26,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "HOOD($97.98)",
+        "ARB($0.00)",
+        "TSM($231.59)"
+      ]
+    },
+    {
+      "date": "2025-07-09",
+      "value": 10260.38,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "HOOD($94.54)",
+        "ARB($0.00)",
+        "MSFT($500.60)"
+      ]
+    },
+    {
+      "date": "2025-07-16",
+      "value": 10410.64,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SEI($0.36)",
+        "AMD($160.08)",
+        "XRP($3.04)"
+      ]
+    },
+    {
+      "date": "2025-07-23",
+      "value": 10454.7,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "STRK($18.36)",
+        "ETH($3629.70)",
+        "ENA($0.46)"
+      ]
+    },
+    {
+      "date": "2025-07-30",
+      "value": 10594.46,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "ENA($0.60)",
+        "AMD($179.51)",
+        "ETH($3808.20)"
+      ]
+    },
+    {
+      "date": "2025-08-06",
+      "value": 10573.55,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "ENA($0.60)",
+        "STRK($10.65)",
+        "NVDA($179.39)"
+      ]
+    },
+    {
+      "date": "2025-08-13",
+      "value": 11194.99,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "ETH($4756.28)",
+        "ENA($0.78)",
+        "PLTR($184.37)"
+      ]
+    },
+    {
+      "date": "2025-08-20",
+      "value": 10334.49,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "ARB($0.00)",
+        "SGOV($97.77)",
+        "GOOGL($198.87)"
+      ]
+    },
+    {
+      "date": "2025-08-27",
+      "value": 10414.64,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "ARB($0.00)",
+        "NVDA($181.57)",
+        "GOOGL($207.01)"
+      ]
+    },
+    {
+      "date": "2025-09-03",
+      "value": 10554.63,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "GOOGL($230.14)",
+        "ARB($0.00)",
+        "PAXG($3575.16)"
+      ]
+    },
+    {
+      "date": "2025-09-10",
+      "value": 10770.01,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "AVGO($367.46)",
+        "GOOGL($238.85)",
+        "GLD($335.26)"
+      ]
+    },
+    {
+      "date": "2025-09-17",
+      "value": 10792.53,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "TSLA($425.86)",
+        "GOOGL($249.19)",
+        "COPX($51.82)"
+      ]
+    },
+    {
+      "date": "2025-09-24",
+      "value": 11009.05,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "COPX($54.66)",
+        "TSM($279.17)",
+        "PAXG($3757.55)"
+      ]
+    },
+    {
+      "date": "2025-10-01",
+      "value": 11532.26,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SNX($1.27)",
+        "COPX($59.14)",
+        "SLV($42.91)"
+      ]
+    },
+    {
+      "date": "2025-10-08",
+      "value": 11814.44,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "COPX($62.66)",
+        "BNB($1306.60)",
+        "TSM($302.85)"
+      ]
+    },
+    {
+      "date": "2025-10-15",
+      "value": 11779.34,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SNX($1.70)",
+        "SLV($48.33)",
+        "URA($55.46)"
+      ]
+    },
+    {
+      "date": "2025-10-22",
+      "value": 11216.96,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SNX($1.28)",
+        "ARB($0.00)",
+        "SGOV($98.47)"
+      ]
+    },
+    {
+      "date": "2025-10-29",
+      "value": 11387.47,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "AMD($264.33)",
+        "GOOGL($274.20)",
+        "NVDA($207.02)"
+      ]
+    },
+    {
+      "date": "2025-11-05",
+      "value": 11119.69,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "GOOGL($283.92)",
+        "ARB($0.00)",
+        "SGOV($98.63)"
+      ]
+    },
+    {
+      "date": "2025-11-12",
+      "value": 11261.9,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "GOOGL($286.32)",
+        "AMD($258.89)",
+        "SGOV($98.70)"
+      ]
+    },
+    {
+      "date": "2025-11-19",
+      "value": 10978.77,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "GOOGL($292.41)",
+        "SGOV($98.77)",
+        "SHY($81.40)"
+      ]
+    },
+    {
+      "date": "2025-11-26",
+      "value": 11234.44,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "GOOGL($319.52)",
+        "AAPL($277.04)",
+        "SGOV($98.85)"
+      ]
+    },
+    {
+      "date": "2025-12-03",
+      "value": 11260.07,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "GOOGL($319.20)",
+        "SLV($53.07)",
+        "COPX($65.92)"
+      ]
+    },
+    {
+      "date": "2025-12-10",
+      "value": 11357.38,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SLV($56.07)",
+        "GOOGL($319.98)",
+        "SGOV($98.99)"
+      ]
+    },
+    {
+      "date": "2025-12-17",
+      "value": 11265.11,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SLV($60.26)",
+        "PAXG($4359.79)",
+        "GLD($399.29)"
+      ]
+    },
+    {
+      "date": "2025-12-24",
+      "value": 11555.06,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SLV($65.22)",
+        "PAXG($4493.85)",
+        "COPX($72.06)"
+      ]
+    },
+    {
+      "date": "2025-12-31",
+      "value": 11428.29,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SLV($64.42)",
+        "COPX($71.79)",
+        "SGOV($99.22)"
+      ]
+    },
+    {
+      "date": "2026-01-07",
+      "value": 11476.54,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "COPX($75.90)",
+        "SLV($70.96)",
+        "PAXG($4472.72)"
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "value": 11865.55,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SLV($84.56)",
+        "COPX($82.39)",
+        "GOOGL($335.60)"
+      ]
+    },
+    {
+      "date": "2026-01-21",
+      "value": 11893.2,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SLV($83.96)",
+        "COPX($83.97)",
+        "GLD($443.60)"
+      ]
+    },
+    {
+      "date": "2026-01-28",
+      "value": 12516.81,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "PAXG($5536.53)",
+        "SLV($105.60)",
+        "COPX($91.98)"
+      ]
+    },
+    {
+      "date": "2026-02-04",
+      "value": 11743.27,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "GOOGL($332.81)",
+        "SGOV($99.54)",
+        "SHY($82.02)"
+      ]
+    },
+    {
+      "date": "2026-02-11",
+      "value": 11895.78,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "BERA($0.93)",
+        "TSM($373.04)",
+        "SGOV($99.60)"
+      ]
+    },
+    {
+      "date": "2026-02-18",
+      "value": 11505.12,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SGOV($99.68)",
+        "SHY($82.27)",
+        "IEF($96.08)"
+      ]
+    },
+    {
+      "date": "2026-02-25",
+      "value": 11744.91,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "SGOV($99.74)",
+        "SHY($82.33)",
+        "TSM($386.64)"
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "value": 11558.04,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "USO($91.56)",
+        "SGOV($99.81)",
+        "SHY($82.26)"
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "value": 11641.97,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "STRK($0.04)",
+        "USO($108.05)",
+        "SGOV($99.89)"
+      ]
+    },
+    {
+      "date": "2026-03-18",
+      "value": 11581.08,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "STRK($0.04)",
+        "USO($121.67)",
+        "SGOV($99.96)"
+      ]
+    },
+    {
+      "date": "2026-03-25",
+      "value": 11639.52,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "STRK($0.04)",
+        "FET($0.26)",
+        "TRX($0.31)"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "value": 11612.5,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.03)",
+        "USO($124.09)",
+        "SGOV($100.09)"
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "value": 11686.62,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "FET($0.24)",
+        "USO($124.58)",
+        "SGOV($100.15)"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "value": 11999.68,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "TRX($0.33)",
+        "AVGO($396.72)",
+        "SGOV($100.23)"
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "value": 12169.78,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.05)",
+        "AMD($303.46)",
+        "TRX($0.33)"
+      ]
+    },
+    {
+      "date": "2026-04-29",
+      "value": 12091.05,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($337.11)",
+        "SGOV($100.37)",
+        "USO($150.63)"
+      ]
+    },
+    {
+      "date": "2026-05-06",
+      "value": 12636.91,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($421.39)",
+        "PENDLE($1.95)",
+        "AR($2.65)"
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "value": 13029.19,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($445.50)",
+        "GOOGL($402.62)",
+        "NVDA($225.83)"
+      ]
+    }
+  ]
+}

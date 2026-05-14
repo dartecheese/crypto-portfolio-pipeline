@@ -1,0 +1,234 @@
+{
+  "portfolio_name": "Crypto Portfolio \u2014 2026-05-14",
+  "strategy": "value",
+  "total_capital": 10000.0,
+  "num_assets": 12,
+  "allocated": 9999.99,
+  "timestamp": "2026-05-14T09:41:16.428628",
+  "allocations": [
+    {
+      "rank": 1,
+      "ticker": "BINANCE:RUNEUSD",
+      "name": "RUNEUSD",
+      "price": 0.586,
+      "composite_score": 73.1,
+      "momentum_score": 66.4,
+      "value_score": 74.0,
+      "risk_score": 76.1,
+      "pct_below_ath": 97.4,
+      "allocation_pct": 17.8,
+      "allocation_usd": 1782.15,
+      "category": "defi",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)",
+        "\ud83d\ude80 Strong 1M momentum (+44.73%)",
+        "\ud83d\udee1\ufe0f Low risk profile"
+      ]
+    },
+    {
+      "rank": 2,
+      "ticker": "BINANCE:INJUSD",
+      "name": "INJUSD",
+      "price": 5.003,
+      "composite_score": 71.0,
+      "momentum_score": 83.0,
+      "value_score": 63.2,
+      "risk_score": 75.9,
+      "pct_below_ath": 90.6,
+      "allocation_pct": 12.6,
+      "allocation_usd": 1260.17,
+      "category": "defi",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)",
+        "\ud83d\udd34 Overbought (RSI > 70)",
+        "\ud83d\ude80 Strong 1M momentum (+64.67%)",
+        "\ud83d\udee1\ufe0f Low risk profile"
+      ]
+    },
+    {
+      "rank": 3,
+      "ticker": "COINBASE:SNXUSD",
+      "name": "SNXUSD",
+      "price": 0.327,
+      "composite_score": 70.2,
+      "momentum_score": 39.7,
+      "value_score": 81.3,
+      "risk_score": 72.0,
+      "pct_below_ath": 98.9,
+      "allocation_pct": 10.3,
+      "allocation_usd": 1028.93,
+      "category": "defi",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)",
+        "\u2696\ufe0f RSI neutral zone",
+        "\ud83d\udee1\ufe0f Low risk profile"
+      ]
+    },
+    {
+      "rank": 4,
+      "ticker": "COINBASE:UNIUSD",
+      "name": "UNIUSD",
+      "price": 3.612,
+      "composite_score": 68.6,
+      "momentum_score": 41.6,
+      "value_score": 74.3,
+      "risk_score": 77.2,
+      "pct_below_ath": 92.0,
+      "allocation_pct": 8.9,
+      "allocation_usd": 891.08,
+      "category": "defi",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)",
+        "\u2696\ufe0f RSI neutral zone",
+        "\ud83d\udee1\ufe0f Low risk profile"
+      ]
+    },
+    {
+      "rank": 5,
+      "ticker": "BINANCE:PENDLEUSD",
+      "name": "PENDLEUSD",
+      "price": 1.984,
+      "composite_score": 67.5,
+      "momentum_score": 84.9,
+      "value_score": 61.5,
+      "risk_score": 65.9,
+      "pct_below_ath": 73.7,
+      "allocation_pct": 8.0,
+      "allocation_usd": 797.0,
+      "category": "defi",
+      "signals": [
+        "\ud83d\udcc9 Significant discount to ATH (>60%)",
+        "\ud83d\ude80 Strong 1M momentum (+79.96%)"
+      ]
+    },
+    {
+      "rank": 6,
+      "ticker": "COINBASE:LTCUSD",
+      "name": "LTCUSD",
+      "price": 57.19,
+      "composite_score": 66.4,
+      "momentum_score": 37.3,
+      "value_score": 68.6,
+      "risk_score": 82.0,
+      "pct_below_ath": 86.4,
+      "allocation_pct": 7.3,
+      "allocation_usd": 727.56,
+      "category": "l1",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)",
+        "\u2696\ufe0f RSI neutral zone",
+        "\ud83d\udee1\ufe0f Low risk profile"
+      ]
+    },
+    {
+      "rank": 7,
+      "ticker": "COINBASE:LINKUSD",
+      "name": "LINKUSD",
+      "price": 10.278,
+      "composite_score": 66.2,
+      "momentum_score": 43.9,
+      "value_score": 66.9,
+      "risk_score": 80.0,
+      "pct_below_ath": 80.6,
+      "allocation_pct": 6.7,
+      "allocation_usd": 673.59,
+      "category": "defi",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)",
+        "\ud83d\udee1\ufe0f Low risk profile"
+      ]
+    },
+    {
+      "rank": 8,
+      "ticker": "BINANCE:SUIUSD",
+      "name": "SUIUSD",
+      "price": 1.201,
+      "composite_score": 66.1,
+      "momentum_score": 58.5,
+      "value_score": 63.2,
+      "risk_score": 76.1,
+      "pct_below_ath": 77.6,
+      "allocation_pct": 6.3,
+      "allocation_usd": 630.09,
+      "category": "l1",
+      "signals": [
+        "\ud83d\udcc9 Significant discount to ATH (>60%)",
+        "\ud83d\ude80 Strong 1M momentum (+25.18%)",
+        "\ud83d\udee1\ufe0f Low risk profile"
+      ]
+    },
+    {
+      "rank": 9,
+      "ticker": "BINANCE:FETUSD",
+      "name": "FETUSD",
+      "price": 0.2115,
+      "composite_score": 65.8,
+      "momentum_score": 33.2,
+      "value_score": 73.6,
+      "risk_score": 74.7,
+      "pct_below_ath": 93.9,
+      "allocation_pct": 5.9,
+      "allocation_usd": 594.05,
+      "category": "ai",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)",
+        "\u2696\ufe0f RSI neutral zone",
+        "\ud83d\udee1\ufe0f Low risk profile"
+      ]
+    },
+    {
+      "rank": 10,
+      "ticker": "BINANCE:KAITOUSDT",
+      "name": "KAITOUSDT",
+      "price": 0.4586,
+      "composite_score": 64.1,
+      "momentum_score": 42.8,
+      "value_score": 71.4,
+      "risk_score": 66.1,
+      "pct_below_ath": 84.3,
+      "allocation_pct": 5.6,
+      "allocation_usd": 563.57,
+      "category": "ai",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)",
+        "\u2696\ufe0f RSI neutral zone"
+      ]
+    },
+    {
+      "rank": 11,
+      "ticker": "COINBASE:STRKUSD",
+      "name": "STRKUSD",
+      "price": 0.047,
+      "composite_score": 64.1,
+      "momentum_score": 52.6,
+      "value_score": 78.9,
+      "risk_score": 47.2,
+      "pct_below_ath": 98.3,
+      "allocation_pct": 5.4,
+      "allocation_usd": 537.34,
+      "category": "l2",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)",
+        "\u2696\ufe0f RSI neutral zone",
+        "\ud83d\ude80 Strong 1M momentum (+39.39%)"
+      ]
+    },
+    {
+      "rank": 12,
+      "ticker": "BINANCE:NEARUSD",
+      "name": "NEARUSD",
+      "price": 1.588,
+      "composite_score": 63.9,
+      "momentum_score": 56.9,
+      "value_score": 64.5,
+      "risk_score": 67.7,
+      "pct_below_ath": 92.3,
+      "allocation_pct": 5.1,
+      "allocation_usd": 514.46,
+      "category": "l1",
+      "signals": [
+        "\ud83d\udd25 Deep drawdown from ATH (>80%)"
+      ]
+    }
+  ]
+}

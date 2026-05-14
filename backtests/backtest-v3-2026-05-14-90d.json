@@ -1,0 +1,153 @@
+{
+  "start_date": "2026-02-13",
+  "end_date": "2026-05-14",
+  "initial_capital": 10000,
+  "final_value": 10895.37,
+  "total_return_pct": 8.95,
+  "rebalance_count": 13,
+  "history": [
+    {
+      "date": "2026-02-13",
+      "value": 10000,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "TSM($365.33)",
+        "SGOV($99.66)",
+        "SHY($82.35)"
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "value": 10136.38,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "SGOV($99.71)",
+        "SHY($82.28)",
+        "IEF($96.17)"
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "value": 10296.5,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "SGOV($99.78)",
+        "SHY($82.47)",
+        "IEF($97.06)"
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "value": 10133.01,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.04)",
+        "USO($108.77)",
+        "SGOV($99.86)"
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "value": 10172.72,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.04)",
+        "USO($119.89)",
+        "SGOV($99.93)"
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "value": 9997.53,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.04)",
+        "USO($121.43)",
+        "TRX($0.31)"
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "value": 9901.29,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.03)",
+        "USO($124.20)",
+        "SGOV($100.06)"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "value": 10166.53,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.03)",
+        "USO($137.92)",
+        "FET($0.24)"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "value": 10289.53,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "USO($124.82)",
+        "SGOV($100.20)",
+        "TRX($0.32)"
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "value": 10498.14,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "KAITO($0.49)",
+        "AMD($278.39)",
+        "TRX($0.33)"
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "value": 10659.87,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($347.81)",
+        "SGOV($100.34)",
+        "SHY($82.33)"
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "value": 10739.57,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($360.54)",
+        "PENDLE($1.58)",
+        "TRX($0.33)"
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "value": 11435.55,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($455.19)",
+        "ONDO($0.45)",
+        "PENDLE($2.07)"
+      ]
+    }
+  ]
+}

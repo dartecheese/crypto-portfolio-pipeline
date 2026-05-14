@@ -1,0 +1,109 @@
+{
+  "start_date": "2026-03-15",
+  "end_date": "2026-05-14",
+  "initial_capital": 10000,
+  "final_value": 10749.26,
+  "total_return_pct": 7.49,
+  "rebalance_count": 9,
+  "history": [
+    {
+      "date": "2026-03-15",
+      "value": 10000,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.04)",
+        "USO($119.89)",
+        "SGOV($99.93)"
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "value": 9826.06,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.04)",
+        "USO($121.43)",
+        "SGOV($99.99)"
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "value": 9685.86,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "STRK($0.03)",
+        "USO($124.20)",
+        "TRX($0.32)"
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "value": 9919.2,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "USO($137.92)",
+        "FET($0.23)",
+        "SGOV($100.13)"
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "value": 9961.67,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "USO($124.82)",
+        "TRX($0.32)",
+        "SGOV($100.20)"
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "value": 10208.02,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($278.39)",
+        "TRX($0.33)",
+        "SGOV($100.26)"
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "value": 10478.39,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($347.81)",
+        "RUNE($0.51)",
+        "STRK($0.04)"
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "value": 10545.34,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($360.54)",
+        "TRX($0.34)",
+        "PENDLE($1.59)"
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "value": 11243.67,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "PENDLE($1.98)",
+        "ONDO($0.43)",
+        "RUNE($0.61)"
+      ]
+    }
+  ]
+}

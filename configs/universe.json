@@ -1,0 +1,153 @@
+{
+  "_description": "Multi-asset crypto-native universe for screening & portfolio construction",
+  "_version": "1.0",
+  "_updated": "2026-05-14",
+
+  "assets": {
+    "l1_chains": {
+      "label": "Layer 1 Chains",
+      "description": "Base settlement layers — highest conviction long-term holds",
+      "tickers": {
+        "COINBASE:BTCUSD": "BTC — Digital gold, benchmark",
+        "COINBASE:ETHUSD": "ETH — Smart contract settlement",
+        "COINBASE:SOLUSD": "SOL — High-throughput L1",
+        "BINANCE:BNBUSD": "BNB — BSC ecosystem",
+        "COINBASE:AVAXUSD": "AVAX — Subnet architecture",
+        "BINANCE:NEARUSD": "NEAR — Sharded L1",
+        "BINANCE:SUIUSD": "SUI — Move-based L1",
+        "BINANCE:APTUSD": "APT — Move-based L1",
+        "COINBASE:DOTUSD": "DOT — Parachain ecosystem",
+        "BINANCE:TRXUSD": "TRX — USDT corridor",
+        "BINANCE:TONUSD": "TON — Telegram-native",
+        "COINBASE:ADAUSD": "ADA — Research-driven L1",
+        "BINANCE:SEIUSD": "SEI — Parallelized EVM",
+        "BINANCE:KASUSD": "KAS — BlockDAG L1",
+        "BINANCE:HYPEUSD": "HYPE — Hyperliquid L1"
+      }
+    },
+    "l2_scaling": {
+      "label": "L2 / Scaling Solutions",
+      "description": "Execution layers riding on L1 security",
+      "tickers": {
+        "COINBASE:OPUSD": "OP — Optimism",
+        "COINBASE:ARBUSD": "ARB — Arbitrum",
+        "COINBASE:STRKUSD": "STRK — Starknet ZK-rollup",
+        "COINBASE:MATICUSD": "MATIC — Polygon",
+        "BINANCE:FTMUSD": "FTM — Fantom",
+        "BINANCE:BLASTUSD": "BLAST — Blast L2"
+      }
+    },
+    "defi": {
+      "label": "DeFi Protocols",
+      "description": "On-chain financial primitives — lending, DEXs, derivatives",
+      "tickers": {
+        "COINBASE:UNIUSD": "UNI — Uniswap, top DEX",
+        "COINBASE:AAVEUSD": "AAVE — Lending protocol",
+        "COINBASE:MKRUSD": "MKR — MakerDAO, DAI issuer",
+        "COINBASE:SNXUSD": "SNX — Synthetix, RWA synths (forex/commodities/stocks)",
+        "COINBASE:LINKUSD": "LINK — Oracle infrastructure",
+        "BINANCE:RUNEUSD": "RUNE — Thorchain, cross-chain swaps",
+        "BINANCE:PENDLEUSD": "PENDLE — Yield tokenization",
+        "BINANCE:INJUSD": "INJ — DeFi L1 (exchange infra)",
+        "BINANCE:GMXUSD": "GMX — Perpetual DEX",
+        "BINANCE:JUPUSD": "JUP — Solana DEX aggregator",
+        "BINANCE:ENAUSD": "ENA — Synthetic dollar protocol",
+        "BINANCE:EIGENUSD": "EIGEN — Restaking primitive"
+      }
+    },
+    "ai_crypto": {
+      "label": "AI / Crypto Intersection",
+      "description": "Decentralized compute, AI agents, model markets",
+      "tickers": {
+        "BINANCE:FETUSD": "FET — AI agent platform",
+        "BINANCE:RNDRUSD": "RNDR — Decentralized GPU rendering",
+        "BINANCE:TAOUSD": "TAO — Decentralized ML (Bittensor)",
+        "BINANCE:ARUSD": "AR — Arweave permanent storage",
+        "BINANCE:AI16ZUSDT": "AI16Z — AI agent framework",
+        "BINANCE:KAITOUSDT": "KAITO — AI info finance"
+      }
+    },
+    "meme": {
+      "label": "Meme / Community Tokens",
+      "description": "High-beta, sentiment-driven — small allocation only",
+      "tickers": {
+        "COINBASE:DOGEUSD": "DOGE — OG meme",
+        "BINANCE:WIFUSD": "WIF — Solana meme",
+        "BINANCE:BONKUSD": "BONK — Solana meme",
+        "BINANCE:PEPEUSD": "PEPE — ETH meme",
+        "BINANCE:SHIBUSD": "SHIB — ETH meme",
+        "BINANCE:POPCATUSD": "POPCAT — Solana meme",
+        "BINANCE:GOATUSDT": "GOAT — AI meme",
+        "BINANCE:MOODENGUSDT": "MOODENG — Animal meme"
+      }
+    },
+    "rwa_tokenized": {
+      "label": "Real World Assets (On-Chain)",
+      "description": "Tokenized traditional assets — gold, treasuries, commodities",
+      "tickers": {
+        "COINBASE:PAXGUSD": "PAXG — Tokenized physical gold (1:1)",
+        "BINANCE:ONDOUSD": "ONDO — Tokenized US Treasuries platform",
+        "COINBASE:SNXUSD": "SNX — Also hosts forex/commodity synths (sOIL, sXAU, sEUR, etc.)",
+        "BINANCE:MKRUSD": "MKR — DAI ecosystem, RWA collateral vaults"
+      }
+    },
+    "gaming_metaverse": {
+      "label": "Gaming / Metaverse",
+      "description": "Blockchain gaming and virtual worlds",
+      "tickers": {
+        "BINANCE:IMXUSD": "IMX — Immutable X, gaming L2",
+        "BINANCE:GALAUSD": "GALA — Gala Games",
+        "BINANCE:SUPERUSD": "SUPER — SuperVerse",
+        "BINANCE:ILVUSD": "ILV — Illuvium"
+      }
+    },
+    "data_storage": {
+      "label": "Data / Storage / Depin",
+      "description": "Decentralized physical infrastructure",
+      "tickers": {
+        "COINBASE:PYTHUSD": "PYTH — Oracle network (Solana-native)",
+        "BINANCE:FILUSD": "FIL — Filecoin storage",
+        "BINANCE:ARUSD": "AR — Arweave permanent storage",
+        "BINANCE:HNTUSD": "HNT — Helium wireless network",
+        "BINANCE:RENDERUSD": "RENDER — GPU rendering network"
+      }
+    },
+    "hyperliquid_ecosystem": {
+      "label": "Hyperliquid Ecosystem",
+      "description": "Tokens native to or primarily traded on Hyperliquid",
+      "tickers": {
+        "BINANCE:HYPEUSD": "HYPE — Hyperliquid L1 token",
+        "BINANCE:PURRUSD": "PURR — Hyperliquid meme"
+      }
+    }
+  },
+
+  "rwa_synths_supplementary": {
+    "_note": "These are Synthetix synths — price feeds via Synthetix API, not TradingView",
+    "commodities": {
+      "sXAU": "Synthetic Gold (per oz)",
+      "sXAG": "Synthetic Silver (per oz)",
+      "sOIL": "Synthetic WTI Crude Oil"
+    },
+    "forex": {
+      "sEUR": "Synthetic Euro",
+      "sGBP": "Synthetic British Pound",
+      "sJPY": "Synthetic Japanese Yen",
+      "sCHF": "Synthetic Swiss Franc",
+      "sAUD": "Synthetic Australian Dollar"
+    },
+    "equities": {
+      "sAAPL": "Synthetic Apple",
+      "sTSLA": "Synthetic Tesla",
+      "sMSFT": "Synthetic Microsoft",
+      "sGOOGL": "Synthetic Google/Alphabet",
+      "sAMZN": "Synthetic Amazon",
+      "sMETA": "Synthetic Meta",
+      "sNVDA": "Synthetic Nvidia",
+      "sCOIN": "Synthetic Coinbase"
+    },
+    "indexes": {
+      "sSPX": "Synthetic S&P 500 Index"
+    }
+  }
+}
