@@ -1,0 +1,248 @@
+{
+  "generated": "2026-05-14T12:30:29.038664+00:00",
+  "source": "crypto-portfolio-pipeline v4",
+  "regime": "neutral",
+  "totalCapital": 25000.0,
+  "riskProfile": "medium",
+  "stopLossPct": 0.25,
+  "agents": [
+    {
+      "label": "pipeline-ondo--ondo",
+      "name": "ONDO \u2014 Ondo",
+      "category": "rwa",
+      "modules": [
+        "hyperliquid-mean-rev",
+        "drift-funding-arb"
+      ],
+      "allocationUsdc": 1217.5,
+      "allocationPct": 4.9,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.2865,
+      "pipelineScore": 67.7,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-suiusd",
+      "name": "SUIUSD",
+      "category": "l1",
+      "modules": [
+        "trend-trader",
+        "hyperliquid-momentum"
+      ],
+      "allocationUsdc": 1799.59,
+      "allocationPct": 7.2,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.9008,
+      "pipelineScore": 60.7,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-strkusd",
+      "name": "STRKUSD",
+      "category": "l2",
+      "modules": [
+        "trend-trader",
+        "hyperliquid-arb"
+      ],
+      "allocationUsdc": 902.17,
+      "allocationPct": 3.6,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.0353,
+      "pipelineScore": 59.5,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-dogeusd",
+      "name": "DOGEUSD",
+      "category": "meme",
+      "modules": [
+        "meme-sniper"
+      ],
+      "allocationUsdc": 2400.86,
+      "allocationPct": 9.6,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.0851,
+      "pipelineScore": 56.1,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-arbusd",
+      "name": "ARBUSD",
+      "category": "l2",
+      "modules": [
+        "trend-trader",
+        "hyperliquid-arb"
+      ],
+      "allocationUsdc": 1444.53,
+      "allocationPct": 5.8,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.0979,
+      "pipelineScore": 55.0,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-uniusd",
+      "name": "UNIUSD",
+      "category": "defi",
+      "modules": [
+        "yield-optimizer",
+        "dex-arbitrage"
+      ],
+      "allocationUsdc": 2038.82,
+      "allocationPct": 8.2,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 2.709,
+      "pipelineScore": 55.0,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-linkusd",
+      "name": "LINKUSD",
+      "category": "defi",
+      "modules": [
+        "yield-optimizer",
+        "dex-arbitrage"
+      ],
+      "allocationUsdc": 2424.74,
+      "allocationPct": 9.7,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 7.7085,
+      "pipelineScore": 54.4,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-morpho--morpho",
+      "name": "MORPHO \u2014 Morpho",
+      "category": "rwa",
+      "modules": [
+        "hyperliquid-mean-rev",
+        "drift-funding-arb"
+      ],
+      "allocationUsdc": 1462.31,
+      "allocationPct": 5.8,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 1.4632,
+      "pipelineScore": 54.0,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-kaitousdt",
+      "name": "KAITOUSDT",
+      "category": "ai",
+      "modules": [
+        "trend-trader",
+        "hyperliquid-momentum"
+      ],
+      "allocationUsdc": 1487.07,
+      "allocationPct": 5.9,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.3439,
+      "pipelineScore": 54.0,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-seiusd",
+      "name": "SEIUSD",
+      "category": "l1",
+      "modules": [
+        "trend-trader",
+        "hyperliquid-momentum"
+      ],
+      "allocationUsdc": 1638.79,
+      "allocationPct": 6.6,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.0496,
+      "pipelineScore": 53.4,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-snxusd",
+      "name": "SNXUSD",
+      "category": "defi",
+      "modules": [
+        "yield-optimizer",
+        "dex-arbitrage"
+      ],
+      "allocationUsdc": 1493.05,
+      "allocationPct": 6.0,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.2453,
+      "pipelineScore": 53.4,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-opusd",
+      "name": "OPUSD",
+      "category": "l2",
+      "modules": [
+        "trend-trader",
+        "hyperliquid-arb"
+      ],
+      "allocationUsdc": 1203.07,
+      "allocationPct": 4.8,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.1095,
+      "pipelineScore": 53.3,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-solusd",
+      "name": "SOLUSD",
+      "category": "l1",
+      "modules": [
+        "trend-trader",
+        "hyperliquid-momentum"
+      ],
+      "allocationUsdc": 2399.54,
+      "allocationPct": 9.6,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 68.355,
+      "pipelineScore": 53.3,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-dotusd",
+      "name": "DOTUSD",
+      "category": "l1",
+      "modules": [
+        "trend-trader",
+        "hyperliquid-momentum"
+      ],
+      "allocationUsdc": 1648.79,
+      "allocationPct": 6.6,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.9982,
+      "pipelineScore": 53.1,
+      "tradingMode": "paper"
+    },
+    {
+      "label": "pipeline-pythusd",
+      "name": "PYTHUSD",
+      "category": "data",
+      "modules": [
+        "trend-trader"
+      ],
+      "allocationUsdc": 1439.17,
+      "allocationPct": 5.8,
+      "riskProfile": "medium",
+      "profitMode": "reinvest",
+      "stopLoss": 0.0379,
+      "pipelineScore": 52.4,
+      "tradingMode": "paper"
+    }
+  ]
+}

@@ -2,8 +2,8 @@
   "start_date": "2025-11-15",
   "end_date": "2026-05-14",
   "initial_capital": 10000,
-  "final_value": 11800.14,
-  "total_return_pct": 18.0,
+  "final_value": 11396.4,
+  "total_return_pct": 13.96,
   "rebalance_count": 26,
   "history": [
     {
@@ -30,7 +30,7 @@
     },
     {
       "date": "2025-11-29",
-      "value": 10168.49,
+      "value": 10086.66,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -41,7 +41,7 @@
     },
     {
       "date": "2025-12-06",
-      "value": 10209.92,
+      "value": 10127.75,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -52,7 +52,7 @@
     },
     {
       "date": "2025-12-13",
-      "value": 10238.19,
+      "value": 9997.37,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -63,7 +63,7 @@
     },
     {
       "date": "2025-12-20",
-      "value": 10313.88,
+      "value": 10071.28,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -74,7 +74,7 @@
     },
     {
       "date": "2025-12-27",
-      "value": 10575.24,
+      "value": 10326.49,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -85,7 +85,7 @@
     },
     {
       "date": "2026-01-03",
-      "value": 10285.82,
+      "value": 10043.88,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -96,7 +96,7 @@
     },
     {
       "date": "2026-01-10",
-      "value": 10540.31,
+      "value": 10292.38,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -107,7 +107,7 @@
     },
     {
       "date": "2026-01-17",
-      "value": 10759.97,
+      "value": 10506.88,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -118,7 +118,7 @@
     },
     {
       "date": "2026-01-24",
-      "value": 10834.74,
+      "value": 10579.89,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -129,7 +129,7 @@
     },
     {
       "date": "2026-01-31",
-      "value": 10540.39,
+      "value": 10292.47,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -140,7 +140,7 @@
     },
     {
       "date": "2026-02-07",
-      "value": 10480.29,
+      "value": 10121.71,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -151,7 +151,7 @@
     },
     {
       "date": "2026-02-14",
-      "value": 10462.91,
+      "value": 10104.92,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -162,7 +162,7 @@
     },
     {
       "date": "2026-02-21",
-      "value": 10618.61,
+      "value": 10255.3,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -173,7 +173,7 @@
     },
     {
       "date": "2026-02-28",
-      "value": 10786.35,
+      "value": 10417.29,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -184,7 +184,7 @@
     },
     {
       "date": "2026-03-07",
-      "value": 10606.76,
+      "value": 10243.85,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -195,7 +195,7 @@
     },
     {
       "date": "2026-03-14",
-      "value": 10632.07,
+      "value": 10268.29,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -206,7 +206,7 @@
     },
     {
       "date": "2026-03-21",
-      "value": 10465.12,
+      "value": 10107.05,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -217,7 +217,7 @@
     },
     {
       "date": "2026-03-28",
-      "value": 10354.02,
+      "value": 9999.76,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -228,7 +228,7 @@
     },
     {
       "date": "2026-04-04",
-      "value": 10598.85,
+      "value": 10236.21,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -239,7 +239,7 @@
     },
     {
       "date": "2026-04-11",
-      "value": 10758.15,
+      "value": 10390.06,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -250,7 +250,7 @@
     },
     {
       "date": "2026-04-18",
-      "value": 10922.13,
+      "value": 10548.43,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -261,7 +261,7 @@
     },
     {
       "date": "2026-04-25",
-      "value": 11333.66,
+      "value": 10945.88,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -272,7 +272,7 @@
     },
     {
       "date": "2026-05-02",
-      "value": 11510.8,
+      "value": 11116.95,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
@@ -283,7 +283,7 @@
     },
     {
       "date": "2026-05-09",
-      "value": 12149.75,
+      "value": 11734.05,
       "num_assets": 15,
       "regime": "bear",
       "top_3": [
