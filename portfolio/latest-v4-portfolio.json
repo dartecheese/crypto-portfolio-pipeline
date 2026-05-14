@@ -19,8 +19,8 @@
     "\ud83d\udd17 SOLUSD correlation penalty (\u00d70.85)",
     "\ud83d\udd17 DOTUSD correlation penalty (\u00d70.78)"
   ],
-  "stop_loss_pct": 0.15,
-  "timestamp": "2026-05-14T11:51:57.806851+00:00",
+  "stop_loss_pct": 0.25,
+  "timestamp": "2026-05-14T12:30:29.038664+00:00",
   "allocations": [
     {
       "rank": 1,
@@ -40,7 +40,7 @@
         "\u2696\ufe0f RSI neutral",
         "\ud83d\ude80 Strong 1M (+48%)"
       ],
-      "stop_loss": 0.3247
+      "stop_loss": 0.2865
     },
     {
       "rank": 2,
@@ -60,7 +60,7 @@
         "\u2696\ufe0f RSI neutral",
         "\ud83d\ude80 Strong 1M (+25%)"
       ],
-      "stop_loss": 1.0209
+      "stop_loss": 0.9008
     },
     {
       "rank": 3,
@@ -80,7 +80,7 @@
         "\u2696\ufe0f RSI neutral",
         "\ud83d\ude80 Strong 1M (+39%)"
       ],
-      "stop_loss": 0.0399
+      "stop_loss": 0.0353
     },
     {
       "rank": 4,
@@ -100,7 +100,7 @@
         "\u2696\ufe0f RSI neutral",
         "\ud83d\ude80 Strong 1M (+20%)"
       ],
-      "stop_loss": 0.0964
+      "stop_loss": 0.0851
     },
     {
       "rank": 5,
@@ -119,7 +119,7 @@
         "\ud83d\udd25 Deep ATH drawdown (>80%)",
         "\u2696\ufe0f RSI neutral"
       ],
-      "stop_loss": 0.111
+      "stop_loss": 0.0979
     },
     {
       "rank": 6,
@@ -138,7 +138,7 @@
         "\ud83d\udd25 Deep ATH drawdown (>80%)",
         "\u2696\ufe0f RSI neutral"
       ],
-      "stop_loss": 3.0702
+      "stop_loss": 2.709
     },
     {
       "rank": 7,
@@ -157,7 +157,7 @@
         "\ud83d\udd25 Deep ATH drawdown (>80%)",
         "\u2696\ufe0f RSI neutral"
       ],
-      "stop_loss": 8.7363
+      "stop_loss": 7.7085
     },
     {
       "rank": 8,
@@ -176,7 +176,7 @@
         "\u2696\ufe0f RSI neutral",
         "\ud83d\udee1\ufe0f Low risk"
       ],
-      "stop_loss": 1.6583
+      "stop_loss": 1.4632
     },
     {
       "rank": 9,
@@ -195,7 +195,7 @@
         "\ud83d\udd25 Deep ATH drawdown (>80%)",
         "\u2696\ufe0f RSI neutral"
       ],
-      "stop_loss": 0.3898
+      "stop_loss": 0.3439
     },
     {
       "rank": 10,
@@ -215,7 +215,7 @@
         "\u2696\ufe0f RSI neutral",
         "\ud83d\ude80 Strong 1M (+17%)"
       ],
-      "stop_loss": 0.0563
+      "stop_loss": 0.0496
     },
     {
       "rank": 11,
@@ -234,7 +234,7 @@
         "\ud83d\udd25 Deep ATH drawdown (>80%)",
         "\u2696\ufe0f RSI neutral"
       ],
-      "stop_loss": 0.278
+      "stop_loss": 0.2453
     },
     {
       "rank": 12,
@@ -254,7 +254,7 @@
         "\u2696\ufe0f RSI neutral",
         "\ud83d\ude80 Strong 1M (+27%)"
       ],
-      "stop_loss": 0.1241
+      "stop_loss": 0.1095
     },
     {
       "rank": 13,
@@ -274,7 +274,7 @@
         "\u2696\ufe0f RSI neutral",
         "\ud83d\udee1\ufe0f Low risk"
       ],
-      "stop_loss": 77.469
+      "stop_loss": 68.355
     },
     {
       "rank": 14,
@@ -293,7 +293,7 @@
         "\ud83d\udd25 Deep ATH drawdown (>80%)",
         "\u2696\ufe0f RSI neutral"
       ],
-      "stop_loss": 1.1313
+      "stop_loss": 0.9982
     },
     {
       "rank": 15,
@@ -312,7 +312,7 @@
         "\ud83d\udd25 Deep ATH drawdown (>80%)",
         "\u2696\ufe0f RSI neutral"
       ],
-      "stop_loss": 0.043
+      "stop_loss": 0.0379
     }
   ]
 }

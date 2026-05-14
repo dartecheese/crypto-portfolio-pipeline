@@ -15,10 +15,7 @@ from typing import Dict, List, Tuple, Optional
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from risk import RiskManager, compute_correlation_matrix
 from signals import SignalEnricher
-from optimize import (
-    risk_parity_weights, compute_sharpe,
-    detect_regime_multi_tf, optimize_portfolio,
-)
+# v4: optimization logic inlined; optimize.py is for standalone analysis
 
 # ── Paths ──
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -202,6 +199,7 @@ def allocate_portfolio(
     optimization: str = OPTIMIZATION_MODE,
     risk_mgr: Optional[RiskManager] = None,
     correlation_matrix: Optional[Dict] = None,
+    regime: str = "neutral",
 ) -> Dict:
     """v4: Category-diversified, risk-managed, optimized allocation."""
     if not ranked:
@@ -363,7 +361,7 @@ def run_pipeline(data_file: str, strategy: str = "balanced", top_n: int = 15,
             same_cat = a["category"] == b["category"]
             corr_matrix[t][t2] = 0.85 if (same_cat and t != t2) else 0.3 if t != t2 else 1.0
 
-    portfolio = allocate_portfolio(ranked, top_n, total_capital, OPTIMIZATION_MODE, risk_mgr, corr_matrix)
+    portfolio = allocate_portfolio(ranked, top_n, total_capital, OPTIMIZATION_MODE, risk_mgr, corr_matrix, regime)
 
     # Save
     os.makedirs(PORTFOLIO_DIR, exist_ok=True)
