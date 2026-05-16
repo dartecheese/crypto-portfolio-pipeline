@@ -1,0 +1,65 @@
+{
+  "start_date": "2026-04-14",
+  "end_date": "2026-05-14",
+  "initial_capital": 10000,
+  "final_value": 11128.94,
+  "total_return_pct": 11.29,
+  "rebalance_count": 5,
+  "history": [
+    {
+      "date": "2026-04-14",
+      "value": 10000,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMZN($249.02)",
+        "TRX($0.32)",
+        "SGOV($100.21)"
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "value": 10097.02,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "TRX($0.33)",
+        "STRK($0.04)",
+        "AMD($284.49)"
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "value": 10353.9,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "AMD($323.21)",
+        "SGOV($100.36)",
+        "SHY($82.26)"
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "value": 10676.88,
+      "num_assets": 15,
+      "regime": "bear",
+      "top_3": [
+        "PENDLE($1.97)",
+        "RUNE($0.55)",
+        "TRX($0.34)"
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "value": 11094.49,
+      "num_assets": 15,
+      "regime": "neutral",
+      "top_3": [
+        "AMD($448.29)",
+        "INJ($4.78)",
+        "ONDO($0.39)"
+      ]
+    }
+  ]
+}

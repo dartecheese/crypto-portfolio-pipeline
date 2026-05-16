@@ -1,0 +1,26 @@
+{
+  "period": "2026-05-14 \u2192 2026-05-16",
+  "snapshots": 2,
+  "total_return_pct": 0.0,
+  "max_drawdown_pct": 0,
+  "sharpe_ratio": 0,
+  "win_rate_pct": 0.0,
+  "latest_value": 25000.0,
+  "category_exposure": {
+    "l1_chains": 24.9,
+    "l2_scaling": 19.5,
+    "defi": 13.5,
+    "equities_mag7": 7.0,
+    "commodities": 7.0,
+    "gaming_metaverse": 7.0,
+    "meme": 7.0,
+    "ai_crypto": 7.0,
+    "treasuries": 7.0
+  },
+  "regime": "regime-aware+v4",
+  "risk_alerts": [
+    "\ud83d\udd17 DOTUSD correlation penalty (\u00d70.85)",
+    "\ud83d\udd17 SEIUSD correlation penalty (\u00d70.78)",
+    "\ud83d\udd17 ARBUSD correlation penalty (\u00d70.85)"
+  ]
+}
